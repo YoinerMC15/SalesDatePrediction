@@ -1,0 +1,54 @@
+
+mat-card {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-paginator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+ 
+.view-orders-btn {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+  }
+  
+
+  .new-order-btn {
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .view-orders-btn:hover,
+.new-order-btn:hover {
+  opacity: 0.8;
+}
+  

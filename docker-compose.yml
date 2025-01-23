@@ -1,0 +1,32 @@
+
+services:
+  database:
+    build:
+      context: ./database
+    container_name: sqlserver-database
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Prueba202501"
+      ACCEPT_EULA: "Y"
+
+
+  api:
+    build:
+      context: .
+      dockerfile: Api/SalesDatePrediction/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    depends_on:
+      - database
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=database,1433;Database=StoreSample;User Id=sa;Password=Prueba202501;MultipleActiveResultSets=true;TrustServerCertificate=True;
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/SalesDatePredictionApp/Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
